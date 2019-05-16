@@ -1,0 +1,30 @@
+# Directory containing input data, each file must be named
+# CL_{anything}.txt
+inputdir = "sample_input"
+
+# Name of cell line gene expression data in input directory.
+gene_expr_file = "CCLE_Expression_Entrez_2012-10-18.res"
+
+# Directory name for output files, which will consist of a table of
+# drug metrics, a list of gene correlations with a metric of interest,
+# and a PDF containing images for each cell line.
+outdir = "sample_output"
+
+# Drug A name.  This is the drug that will have one dose per column.
+# Change only the name in quotes.
+drugA = "TH588"
+
+# Drug A doses (in M).  Change only the doses in the parentheses,
+# but any number of doses is OK.  First dose must be 0.
+doseA = c(0, 1e-7, 2.5e-7, 5e-7, 1e-6, 2e-6, 4e-6, 6e-6, 1e-5, 1.4e-5)
+
+# Drug B name.  This is the drug that will have one dose per row.
+#Change only the name in quotes.
+drugB = "BI2536"
+
+# Drug B doses (in M).  Change only the list of doses in the parentheses,
+# but any number of doses is OK.  First dose must be 0.
+doseB = c(0, 1e-9, 2.5e-9, 5e-9, 7.5e-9, 1e-8)
+
+# TRUE to generate plots, FALSE to skip them.
+make_plots = TRUE
