@@ -129,9 +129,10 @@ read_expression_data <- function(exp_filename, cl_names) {
     }
   }
   
-  # Remove unnamed rows.
+  # Remove unnamed rows and rows that have a number in the genename column with no other data.
   for (row_index in nrow(expression):1) {
-    if (is.na(expression[row_index,1])) {
+    # If there is no gene name,            or the gene name is a number (suppress warnings here              and there's at least one following blank.
+    if ( is.na(expression[row_index,1]) | ((!is.na(suppressWarnings(as.numeric(expression[row_index,1])))) & sum(is.na(expression[row_index,])) >=1)) {
       expression<-expression[-row_index,]
     }
   }
