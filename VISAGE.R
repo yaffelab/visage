@@ -59,7 +59,7 @@ for (metric_index in 2:length(cell_line_data)) {
   compiled_metrics <- rbind(compiled_metrics, data.frame(a=cell_line_data[[metric_index]]@name, b=cell_line_data[[metric_index]]@aucA, c=cell_line_data[[metric_index]]@aucB, d=cell_line_data[[metric_index]]@synergy, e=cell_line_data[[metric_index]]@ss_syn))
 }
 # Give rows and columns of the compiled metrics data structure names.
-colnames(compiled_metrics) <- c("Cell Line", paste(drugA, "AUC",sep="_"), paste(drugB, "AUC",sep="_"), "untransfomed_synergy", "scaled_shifted_synergy")
+colnames(compiled_metrics) <- c("Cell Line", paste(drugA, "AUC",sep="_"), paste(drugB, "AUC",sep="_"), "untransformed_synergy", "scaled_shifted_synergy")
 rownames(compiled_metrics) <- compiled_metrics[,1]
 
 # Write out cell line sensitivity and synergy for each cell line.
